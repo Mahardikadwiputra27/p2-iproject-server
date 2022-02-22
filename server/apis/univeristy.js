@@ -1,6 +1,7 @@
+const axios = require("axios")
 
-const university =  'http://universities.hipolabs.com'
+const university = axios.create({
+    baseURL: 'http://universities.hipolabs/'
+})
 
-
-
-module.exports = university
+module.exports = {university}

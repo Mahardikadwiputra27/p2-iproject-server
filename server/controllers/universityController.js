@@ -5,16 +5,15 @@ const { university } = require('../apis/univeristy')
 class Controller {
     static findByTitle = async (req, res, next) => {
         try {
-            const result = university.findAll({
-                where = {
-                    title = {
-                        [Op.iLike]: `%${req.query.title}%`
-                    }
-                }
-            })
+            const {title} = req.query
+            const result = await university.get(`search?title=${title}`)
+            res.status(200).json(result)
         } catch (err) {
-
+            next(err)
         }
-
     }
 }
+
+
+
+module.exports = Controller
