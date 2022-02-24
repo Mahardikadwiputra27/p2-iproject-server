@@ -1,7 +1,6 @@
 const router = require('express').Router()
+const SearchController = require('../controllers/searchController')
 
-
-const UniversityController = require('../controllers/universityController')
-router.get('/place', UniversityController.searchLocation)
+router.get('/place', SearchController.searchLocation)
 
 module.exports = router
