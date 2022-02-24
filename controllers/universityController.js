@@ -9,13 +9,13 @@ class Controller {
     static searchLocation = async (req, res, next) => {
         try {
             const { location } = req.query
-    
+          
             const { data: place } = await axios({
                 method: 'get',
                 url: `https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=${location}&inputtype=textquery&fields=geometry&key=${key}`,
                 headers: {}
             })
-            const { data: nearbyPlace } = await axios({
+            const { data: nearbyPlace } = await axios({ 
                 method: 'get',
                 url: `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${place.candidates[0].geometry.location.lat},${place.candidates[0].geometry.location.lng}&radius=2000&type=lodging&key=${key}`,
                 headers: {}
