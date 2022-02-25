@@ -16,8 +16,6 @@ _History_
 - UserId: integer, required
 ```
 
-
-
 # Relations
 
 ### **One-to-Many**
@@ -55,6 +53,7 @@ _Response (201 - Created)_
   "email": "string"
 }
 ```
+
 _Response (400 - Bad Request)_
 
 ```json
@@ -71,6 +70,7 @@ OR
   "message": "Password must be input"
 }
 ```
+
 # 2. POST /login
 
 Request:
@@ -112,7 +112,7 @@ _Response (401 - Unauthorized)_
 }
 ```
 
-#
+# 3. GET /search/place
 
 Request:
 
@@ -120,8 +120,7 @@ Request:
 
 ```json
 {
-  "email": "string",
-  "password": "string"
+  "location": "string"
 }
 ```
 
@@ -134,4 +133,16 @@ _Response (200 - OK)_
 }
 ```
 
+# 3. GET /history
+
+_Response (200 - OK)_
+
+```json
+{
+  "id": "integer",
+  "name": "string",
+  "UserId": "integer",
+  "createdAt": "date",
+  "updatedAt": "date"
+}
 ```
