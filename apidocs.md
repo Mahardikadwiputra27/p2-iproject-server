@@ -146,3 +146,7 @@ _Response (200 - OK)_
   "updatedAt": "date"
 }
 ```
+# ENV Notes
+KEY = Google maps api key : "string"
+PORT = Port : "integer"
+SECRET_KEY = JWT secret key : "string"
